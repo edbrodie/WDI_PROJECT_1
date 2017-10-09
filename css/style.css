@@ -1,3 +1,56 @@
-* {
-  background-color: blue;
+body {
+  background: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, serif;
+  color: #00FF0D;
+  text-align: center;
+}
+
+.outline {
+  margin: 0 auto;
+  border: 2px solid white;
+  padding: 2px;
+  width: 240px;
+  height: 180px;
+}
+
+.symbols {
+  float: left;
+  width: 58px;
+  height: 58px;
+  font-size: 70px;
+  line-height: 58px;
+  text-align: center;
+  border: 1px solid white;
+  list-style-type: none;
+}
+
+li:hover{
+  cursor:pointer;
+}
+
+.playerTurn {
+  text-align: center;
+}
+
+.X {
+  color: black;
+  background: #00FF0D;
+}
+
+.O {
+  color: #00FF0D;
+  background: black;
+}
+
+.reset {
+  font-size: 20px;
+  background: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.reset: hover{
+  background: #b8bdee;
 }
