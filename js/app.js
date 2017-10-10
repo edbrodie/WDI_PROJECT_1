@@ -1,3 +1,97 @@
+
+// set to check for DOM load before running
+$(() => {
+
+  //setup a variable as a function that will run
+  const memzy = {
+
+
+
+    //an array made up of 6 sets of 'pairs'
+    symbols: ['Cat', 'Cat', 'Dog', 'Dog', 'Mouse', 'Mouse', 'Horse', 'Horse', 'Chicken', 'Chicken', 'Turkey', 'Turkey'],
+    totalMatches: [],
+    startGame: () => {
+      memzy.shuffle();
+      memzy.symbolDesignation();
+      memzy.clicky();
+      memzy.checkWin();
+    },
+
+    //setup a means to shuffle the symbols.
+    shuffle: () => {
+      let randomizer = 0;
+      let temp = 0;
+
+      for (i = 1; i < memzy.symbols.length; i++) {
+        randomizer = Math.floor(Math.random() * i);
+        temp = memzy.symbols[i];
+        memzy.symbols[i] = memzy.symbols[randomizer];
+        memzy.symbols[randomizer] = temp;
+      }
+
+      console.log('Symbols shuffled! - ' + memzy.symbols);
+    },
+
+    // define a function to designate symbols to respective clickable panels
+    symbolDesignation: function() {
+      $('.symbol').each(function(index) {
+        $(this).attr('data-symbol-value', memzy.symbols[index]);
+      });
+    },
+
+    // make a function that when a tile is clicked it will add the class 's'
+    clicky: () => {
+      $('.symbol').on('click', function() {
+        $(this).html('<p>' + $(this).data('symbolValue') + '</p>').addClass('selected');
+        memzy.checkMatch();
+      });
+    },
+
+    checkWin: function() {
+      if (memzy.totalMatches.length === 6) {
+        alert('You Won!');
+      }
+    },
+
+    checkMatch: function() {
+      if ($('.selected').length === 2) {
+
+        //compare the first selected symbol with the second selected symbol.
+        if ($('.selected').first().data('symbolValue') === $('.selected').last().data('symbolValue')) {
+
+          // add a tally into empy array called totalMatches
+          memzy.totalMatches.push('i');
+          memzy.checkWin();
+          //console log to check tally being added.
+          console.log(memzy.totalMatches);
+
+          $('.selected').each(function() {
+            $(this).animate({
+              opacity: 0.25
+            });
+          });
+
+
+          $('.selected').each(function() {
+            $(this).removeClass('selected');
+
+          });
+
+        } else {
+          setTimeout(() => {
+            $('.selected').each(function() {
+              $(this).html('').removeClass('selected');
+            });
+          }, 600);
+        }
+      }
+    }
+
+  };
+  memzy.startGame();
+
+});
+
 /*
 //Pseudocode: All pseudocode will be written in this JS file prior to MVP developemnt.
 
@@ -14,40 +108,7 @@
 
 
 //pseudocode as follows (work in progress..): Steps to be completed in sequence.
-*/
 
-
-
-$(() => {
-  const game = {
-    symbols: [1,1,2,2,3,3,4,4,5,5,6,6],
-    init: () => {
-      game.shuffle();
-    },
-    shuffle: () => {
-      let random = 0;
-      let temp = 0;
-      for(i= 1; i < game.symbols.length; i++){
-        random = Math.round(Math.random() * i);
-        console.log(random);
-
-      }
-    },
-    clickHandlers: () =>{
-
-    }
-  };
-  game.init();
-});
-//
-//   console.log('working');
-//
-//   const playerIcons = [];
-//   const
-
-
-
-/*
 
 
 -> Setup link in the HTML for Jquery library
@@ -70,23 +131,14 @@ $(() => {
 ** CSS to be left at this point until MVP is established.
 
 
-~ Setup and test listener to check for DOM load
 
-~ setup global variables and tie them to their HTML counterparts
 
-~ setup code to have all 12 grid items to 'show' on page load as default
 
-~ wait 10 seconds before hiding each grid item's resepctive symbols
-
-~ setup alert for player "Let's test your memory! Click on 2 items to reveal them. Once you guess 6 pairs correctly, you win!"
-
-~ setup click listeners for grid objects. clicking a specific grid item should return the grid item's ID in the cosole log.
 
 -- generate 6 sets of generic, but distinctive symblols/icons to be applied to the tiles
 
 -> add the 12 symbols/icon assets to the project folder and assign them at random to each of the 12 grid items.
 
-~ swap out the console.log "ID of grid item" with jquery hide/display of grid item symbols/icons
 
 @ on loading the page user should see and 4x4 grid with 6 pairs (12 items total) of symbols displaying in said grid.
 
@@ -94,21 +146,14 @@ $(() => {
 
 @ clicking any grid item should present the user with the symbol/icon currently assigned to that grid item in the HTML.
 
-~ setup logic for each grid item to hide itself 1.5 seconds after initial click of grid item
 
 @ click a grid item will now present a symbol/icon for 1.5 seconds, then return to original (hidden) state.
 
-~ setup logic to allow a 2nd grid items to be clicked before initiating the 1.5second wait before hiding both clicked tiles.
 
 @ click a grid item and it will persistent-present. click a second grid item and it will present for 1.5 seconds before hiding itself and the previously clicked grid item.
 
 -> add 6 classes to the HTML to allow for identification of 'pairs' or 'matches'.
 
-~ setup logic to check if both items presenting are a match (ie do they have the same class name), if true, then persistent-present (do not trigger 1.5sec timer and do not toggle to hide state)
-
-~ apply logic to each of the other 5 sets
-
-~ setup win conditions to check if all 6 matches are 'true' if so, user presented with an alert "you did it, nice memory!"
 
 ** apply MVP styling as per project plan pdf.
 

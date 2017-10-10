@@ -1,56 +1,29 @@
-body {
-  background: black;
-  font-family: "Helvetica Neue", Helvetica, Arial, serif;
-  color: #00FF0D;
-  text-align: center;
+* {
+  box-sizing: border-box;
+
 }
 
-.outline {
+.container {
+  width: 540px;
   margin: 0 auto;
-  border: 2px solid white;
-  padding: 2px;
-  width: 240px;
-  height: 180px;
+
 }
 
-.symbols {
+.symbol {
   float: left;
-  width: 58px;
-  height: 58px;
-  font-size: 70px;
-  line-height: 58px;
-  text-align: center;
-  border: 1px solid white;
-  list-style-type: none;
-}
-
-li:hover{
-  cursor:pointer;
-}
-
-.playerTurn {
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+  background: #FFA97B;
   text-align: center;
 }
 
-.X {
-  color: black;
-  background: #00FF0D;
-}
-
-.O {
-  color: #00FF0D;
-  background: black;
-}
-
-.reset {
-  font-size: 20px;
-  background: black;
-  border: none;
-  color: white;
+.symbol:hover {
   cursor: pointer;
-  margin: 20px;
+  border: 3px solid #6DE3CF;
 }
 
-.reset: hover{
-  background: #b8bdee;
+.symbol p {
+  font-size: 38px;
+  color: #6DE3CF;
 }
