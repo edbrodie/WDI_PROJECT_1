@@ -17,9 +17,9 @@ $(() => {
     startGame: () => {
       memzy.shuffle();
       memzy.symbolDesignation();
-      memzy.showAll();
       memzy.clicky();
       memzy.checkWin();
+      memzy.showAll();
     },
 
     //setup a means to shuffle the symbols.
@@ -55,19 +55,27 @@ $(() => {
     // },
 
     showAll: () => {
-      console.log('yep, has class.');
-
-      $('div.symbol').show();
-
-
-
-      //
-      // $('<p>' + $('symbolValue') + '</p>');
-      //
-      //
-      // $('.symbol').show();
+      //Any danger of making this DRY-er?.....
+      $('.clicky').on('click', () => {
+        $('#symbol1').html('<p>' + $('#symbol1').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol2').html('<p>' + $('#symbol2').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol3').html('<p>' + $('#symbol3').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol4').html('<p>' + $('#symbol4').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol5').html('<p>' + $('#symbol5').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol6').html('<p>' + $('#symbol6').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol7').html('<p>' + $('#symbol7').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol8').html('<p>' + $('#symbol8').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol9').html('<p>' + $('#symbol9').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol10').html('<p>' + $('#symbol10').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol11').html('<p>' + $('#symbol11').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol12').html('<p>' + $('#symbol12').data('symbolValue') + '</p>').addClass('selected');
+        //
+        // $('<p>' + $('symbolValue') + '</p>');
+        //
+        //
+        // $('.symbol').show();
+      });
     },
-
 
 
     // make a function that when a tile is clicked it will add the class 's'
