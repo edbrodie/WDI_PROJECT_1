@@ -27,3 +27,9 @@
   font-size: 38px;
   color: #6DE3CF;
 }
+
+aside {
+  float:left ;
+  word-spacing: 300px;
+
+}

@@ -2,17 +2,22 @@
 // set to check for DOM load before running
 $(() => {
 
-  //setup a variable as a function that will run
+  //setup a variable as a function that will run the game.
   const memzy = {
 
 
 
     //an array made up of 6 sets of 'pairs'
     symbols: ['Cat', 'Cat', 'Dog', 'Dog', 'Mouse', 'Mouse', 'Horse', 'Horse', 'Chicken', 'Chicken', 'Turkey', 'Turkey'],
+
+    //empty array to check for game win once filled.
     totalMatches: [],
+
+    //execution of games' functions.
     startGame: () => {
       memzy.shuffle();
       memzy.symbolDesignation();
+      memzy.showAll();
       memzy.clicky();
       memzy.checkWin();
     },
@@ -39,6 +44,32 @@ $(() => {
       });
     },
 
+    // showAll: () => {
+    //   if ($('div').hasClass('data-symbol-value')) {
+    //     console.log('yep, has class.');
+    //     $('body').animate({right: -700}, 2000);
+    //   }
+    //   // if ($('div').attr === 'data-symbol-value') {
+    //   //   $('body').show(500);
+    //   // }
+    // },
+
+    showAll: () => {
+      console.log('yep, has class.');
+
+      $('div.symbol').show();
+
+
+
+      //
+      // $('<p>' + $('symbolValue') + '</p>');
+      //
+      //
+      // $('.symbol').show();
+    },
+
+
+
     // make a function that when a tile is clicked it will add the class 's'
     clicky: () => {
       $('.symbol').on('click', function() {
@@ -47,12 +78,14 @@ $(() => {
       });
     },
 
+    //create a function that will alert user of a win if they've matched 6 pairs
     checkWin: function() {
       if (memzy.totalMatches.length === 6) {
         alert('You Won!');
       }
     },
 
+    //check for match on selected 2 symbols
     checkMatch: function() {
       if ($('.selected').length === 2) {
 
@@ -71,7 +104,7 @@ $(() => {
             });
           });
 
-
+          //remove the div class 'se'
           $('.selected').each(function() {
             $(this).removeClass('selected');
 
