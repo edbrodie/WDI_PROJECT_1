@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <meta charset="utf-8">
-    <title>Memzy</title>
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <title>Memzy</title>
+</head>
+<body>
 
-  </body>
+</body>
 </html>
 
 <html>
@@ -19,35 +21,48 @@
   <meta charset="UTF-8">
   <title>Memory Game</title>
 </head>
+<body background="bkgrnd.jpg">
+  <div id="bg"></div>
 
-<body>
   <h1> Memzy: The worlds hardest game - ever.</h1>
-  <button class='clicky'>show</button>
-  <button class='starttime'>start</button>
-  <div class="container">
 
-    <div class="symbol" id="symbol1" ></div>
-    <div class="symbol" id="symbol2" ></div>
-    <div class="symbol" id="symbol3" ></div>
-    <div class="symbol" id="symbol4" ></div>
-    <div class="symbol" id="symbol5" ></div>
-    <div class="symbol" id="symbol6" ></div>
-    <div class="symbol" id="symbol7" ></div>
-    <div class="symbol" id="symbol8" ></div>
-    <div class="symbol" id="symbol9" ></div>
-    <div class="symbol" id="symbol10" ></div>
-    <div class="symbol" id="symbol11" ></div>
-    <div class="symbol" id="symbol12" ></div>
+
+  <div class="gameContainer">
+    <div class="container">
+
+      <div class="symbol" id="symbol1" ></div>
+      <div class="symbol" id="symbol2" ></div>
+      <div class="symbol" id="symbol3" ></div>
+      <div class="symbol" id="symbol4" ></div>
+      <div class="symbol" id="symbol5" ></div>
+      <div class="symbol" id="symbol6" ></div>
+      <div class="symbol" id="symbol7" ></div>
+      <div class="symbol" id="symbol8" ></div>
+      <div class="symbol" id="symbol9" ></div>
+      <div class="symbol" id="symbol10" ></div>
+      <div class="symbol" id="symbol11" ></div>
+      <div class="symbol" id="symbol12" ></div>
+      <div class="symbol" id="symbol13" ></div>
+      <div class="symbol" id="symbol14" ></div>
+      <div class="symbol" id="symbol15" ></div>
+      <div class="symbol" id="symbol16" ></div>
+      <div class="symbol" id="symbol17" ></div>
+      <div class="symbol" id="symbol18" ></div>
+
+    </div>
 
     <aside>
+      <h2>  <button class='clicky'>show</button></h2>
+    <h2><button class='starttime'>start</button></h2>
       <progress value="0" max="20" id="progressBar"></progress>
-      <span> Matches: <span class='matches'>0</span> </span>
-      <span> Lives: <span class='lives'>5</span></span>
-      <span> timer: <span id='timer'>30</span></span>
+      <p class='statsLeft'>Matches: <span class='matches'>0</span></p>
+      <p class='statsLeft'>Lives left: <span class='lives'>5</span></p>
+      <p class='statsLeft'>Time left:<span id='timer'>30</span></p>
       <span> Restart </span>
-    </aside>
+      </aside>
   </div>
 
-</body>
 
-</html>
+  </body>
+
+  </html>

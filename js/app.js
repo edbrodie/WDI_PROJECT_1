@@ -2,6 +2,14 @@
 // set to check for DOM load before running
 $(() => {
 
+
+
+  $(document).ready(function() {
+    $('.starttime').click(function() {
+      memzy.timer();
+    });
+  });
+
   //setup a variable as a function that will run the game.
   const memzy = {
     //
@@ -17,16 +25,28 @@ $(() => {
 
 
     //an array made up of 6 sets of 'pairs'
-    symbols: ['Cat', 'Cat', 'Dog', 'Dog', 'Mouse', 'Mouse', 'Horse', 'Horse', 'Chicken', 'Chicken', 'Turkey', 'Turkey'],
+    symbols: ['&#9832', '&#9832', '&#9790', '&#9790', '&#9776', '&#9776', '&#9731', '&#9731', '&#9733', '&#9733', '&#9873', '&#9873', '&#x2716', '&#x2716', '&#x265b', '&#x265b', '&#x2663', '&#x2663'],
 
     //empty array to check for game win once filled.
     totalMatches: [],
+
+    timer: () => {
+
+      var timeleft = 20;
+      var downloadTimer = setInterval(function(){
+        document.getElementById('progressBar').value = 20 - --timeleft;
+        if(timeleft === 0)
+          clearInterval(downloadTimer);
+        // alert('hi');
+
+      },1000);
+    },
 
 
 
     //execution of games' functions.
     startGame: () => {
-      memzy.timer();
+      // memzy.timer();
       memzy.shuffle();
       memzy.symbolDesignation();
       memzy.clicky();
@@ -35,6 +55,13 @@ $(() => {
       memzy.checkLose();
 
     },
+
+    // startTimer: () => {
+    //   if
+    // }
+
+
+
 
     //setup a means to shuffle the symbols.
     shuffle: () => {
@@ -69,20 +96,17 @@ $(() => {
     // },
     //
     //
-    timer: () => {
-      $('.starttime').on('click', () => {
-        var timeleft = 20;
-        var downloadTimer = setInterval(function(){
-          document.getElementById('progressBar').value = 20 - --timeleft;
-          if(timeleft <= 0)
-            clearInterval(downloadTimer);
-        });
-      },1000);
-    },
+
 
     showAll: () => {
       //Any danger of making this DRY-er?.....
       $('.clicky').on('click', () => {
+        $('#bg')
+          .animate({opacity: 0}, 4800, function() {
+            $(this)
+              .css({'background-image': 'url(bkgrnd_blr.jpg)'})
+              .animate({opacity: 1});
+          });
         $('#symbol1').html('<p>' + $('#symbol1').data('symbolValue') + '</p>').addClass('selected');
         $('#symbol2').html('<p>' + $('#symbol2').data('symbolValue') + '</p>').addClass('selected');
         $('#symbol3').html('<p>' + $('#symbol3').data('symbolValue') + '</p>').addClass('selected');
@@ -95,6 +119,12 @@ $(() => {
         $('#symbol10').html('<p>' + $('#symbol10').data('symbolValue') + '</p>').addClass('selected');
         $('#symbol11').html('<p>' + $('#symbol11').data('symbolValue') + '</p>').addClass('selected');
         $('#symbol12').html('<p>' + $('#symbol12').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol13').html('<p>' + $('#symbol13').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol14').html('<p>' + $('#symbol14').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol15').html('<p>' + $('#symbol15').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol16').html('<p>' + $('#symbol16').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol17').html('<p>' + $('#symbol17').data('symbolValue') + '</p>').addClass('selected');
+        $('#symbol18').html('<p>' + $('#symbol18').data('symbolValue') + '</p>').addClass('selected');
         setTimeout(() => {
           $('.selected').each(function() {
             $(this).html('').removeClass('selected');
@@ -114,8 +144,9 @@ $(() => {
 
     //create a function that will alert user of a win if they've matched 6 pairs
     checkWin: function() {
-      if (memzy.totalMatches.length === 6) {
+      if (memzy.totalMatches.length === 9) {
         alert('You Won!');
+        location.reload(memzy);
       }
     },
 
@@ -123,6 +154,7 @@ $(() => {
       // let lives = 5;
       if ($('.lives').text() === '0') {
         alert('You lost!');
+        console.log('loser');
       }
     },
 
