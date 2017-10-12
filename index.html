@@ -23,6 +23,7 @@
 <body>
   <h1> Memzy: The worlds hardest game - ever.</h1>
   <button class='clicky'>show</button>
+  <button class='starttime'>start</button>
   <div class="container">
 
     <div class="symbol" id="symbol1" ></div>
@@ -37,9 +38,12 @@
     <div class="symbol" id="symbol10" ></div>
     <div class="symbol" id="symbol11" ></div>
     <div class="symbol" id="symbol12" ></div>
+
     <aside>
-      <span> Score: </span>
-      <span> Lives: </span>
+      <progress value="0" max="20" id="progressBar"></progress>
+      <span> Matches: <span class='matches'>0</span> </span>
+      <span> Lives: <span class='lives'>5</span></span>
+      <span> timer: <span id='timer'>30</span></span>
       <span> Restart </span>
     </aside>
   </div>

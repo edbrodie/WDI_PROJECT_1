@@ -28,6 +28,11 @@
   color: #6DE3CF;
 }
 
+#progressBar {
+        display: inline-block;
+        
+}
+
 aside {
   float:left ;
   word-spacing: 300px;

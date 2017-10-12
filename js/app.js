@@ -4,6 +4,15 @@ $(() => {
 
   //setup a variable as a function that will run the game.
   const memzy = {
+    //
+    // timer: () => {
+    //   var timeleft = 20;
+    //   var downloadTimer = setInterval(function(){
+    //     document.getElementById('progressBar').value = 20 - --timeleft;
+    //     if(timeleft <= 0)
+    //       clearInterval(downloadTimer);
+    //   },1000);
+    // },
 
 
 
@@ -13,13 +22,18 @@ $(() => {
     //empty array to check for game win once filled.
     totalMatches: [],
 
+
+
     //execution of games' functions.
     startGame: () => {
+      memzy.timer();
       memzy.shuffle();
       memzy.symbolDesignation();
       memzy.clicky();
       memzy.checkWin();
       memzy.showAll();
+      memzy.checkLose();
+
     },
 
     //setup a means to shuffle the symbols.
@@ -53,6 +67,18 @@ $(() => {
     //   //   $('body').show(500);
     //   // }
     // },
+    //
+    //
+    timer: () => {
+      $('.starttime').on('click', () => {
+        var timeleft = 20;
+        var downloadTimer = setInterval(function(){
+          document.getElementById('progressBar').value = 20 - --timeleft;
+          if(timeleft <= 0)
+            clearInterval(downloadTimer);
+        });
+      },1000);
+    },
 
     showAll: () => {
       //Any danger of making this DRY-er?.....
@@ -69,11 +95,11 @@ $(() => {
         $('#symbol10').html('<p>' + $('#symbol10').data('symbolValue') + '</p>').addClass('selected');
         $('#symbol11').html('<p>' + $('#symbol11').data('symbolValue') + '</p>').addClass('selected');
         $('#symbol12').html('<p>' + $('#symbol12').data('symbolValue') + '</p>').addClass('selected');
-        //
-        // $('<p>' + $('symbolValue') + '</p>');
-        //
-        //
-        // $('.symbol').show();
+        setTimeout(() => {
+          $('.selected').each(function() {
+            $(this).html('').removeClass('selected');
+          });
+        }, 5000);
       });
     },
 
@@ -93,6 +119,13 @@ $(() => {
       }
     },
 
+    checkLose: function() {
+      // let lives = 5;
+      if ($('.lives').text() === '0') {
+        alert('You lost!');
+      }
+    },
+
     //check for match on selected 2 symbols
     checkMatch: function() {
       if ($('.selected').length === 2) {
@@ -102,9 +135,15 @@ $(() => {
 
           // add a tally into empy array called totalMatches
           memzy.totalMatches.push('i');
+
+          const el = parseInt($('.matches').text());
+          $('.matches').text(el+1);
+
           memzy.checkWin();
           //console log to check tally being added.
           console.log(memzy.totalMatches);
+
+
 
           $('.selected').each(function() {
             $(this).animate({
@@ -119,6 +158,8 @@ $(() => {
           });
 
         } else {
+          const mi = parseInt($('.lives').text());
+          $('.lives').text(mi-1);
           setTimeout(() => {
             $('.selected').each(function() {
               $(this).html('').removeClass('selected');
