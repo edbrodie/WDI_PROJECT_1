@@ -4,24 +4,6 @@ $(() => {
 
 
 
-
-
-
-  // function countdown(){
-  //   var count=30;
-  //   var counter=setInterval(clock, 1000); //1000 will  run it every 1 second
-  //   function clock()  {
-  //     count=count-1;
-  //     if (count <= 0){
-  //       clearInterval(counter);
-  //       //counter ended, do something here
-  //       return;
-  //     }
-
-  //     //Do code for showing the number of seconds here
-  //   }
-  // }
-
   var myCounter = new Countdown({
     seconds: 60,  // number of seconds to count down
     onUpdateStatus: function(sec){
@@ -32,7 +14,7 @@ $(() => {
 
     }, // callback for each second
     onCounterEnd: function(){
-      alert('Time\'s up! You loose, sucka!');
+      alert('Time\'s up! You lose!');
       location.reload(memzy);
     } // final action
   });
@@ -169,6 +151,7 @@ $(() => {
     clicky: () => {
       $('.symbol').on('click', function() {
         $(this).html('<p>' + $(this).data('symbolValue') + '</p>').addClass('selected');
+        $(this).animate({fontSize: '125px'});
         memzy.checkMatch();
       });
     },
