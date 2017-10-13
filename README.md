@@ -10,11 +10,11 @@
 
 ## Overview
 
-Memzy™​ ​is​ ​memory​ ​game​ ​in​ ​which​ ​the​ ​user​ ​will​ ​be​ ​presented​ ​with​ ​a​ ​4x4​ ​grid,​ ​totalling​ ​
-grid​ ​tiles.​ ​There​ ​will​ ​be​ ​6​ ​pairs​ ​of​ ​symbols/icons​ ​dotted​ ​around​ ​the​ ​grid,​ ​presented​ ​to​ ​the
+Memzy™​ ​is​ ​memory​ ​game​ ​in​ ​which​ ​the​ ​user​ ​will​ ​be​ ​presented​ ​with​ ​a​ ​6x3​ ​grid,​ ​totalling​ ​
+grid​ ​tiles.​ ​There​ ​will​ ​be​ ​9​ ​pairs​ ​of​ ​symbols/icons​ ​dotted​ ​around​ ​the​ ​grid,​ ​presented​ ​to​ ​the
 user​ ​for​ ​approx​ ​5​ ​seconds​ ​before​ ​hiding​ ​behind​ ​their​ ​respective​ ​tile.​ ​The​ ​objective​ ​is​ ​to​ ​use
-your​ ​memory​ ​to​ ​pull​ ​out​ ​the​ ​6​ ​pairs​ ​-​ ​incorrectly​ ​turning​ ​over​ ​the​ ​wrong​ ​tiles​ ​will​ ​deduct​ ​
-of​ ​your​ ​3​ ​lives.
+your​ ​memory​ ​to​ ​pull​ ​out​ ​the​ ​9​ ​pairs​ ​-​ ​incorrectly​ ​turning​ ​over​ ​the​ ​wrong​ ​tiles​ ​will​ ​deduct​ ​
+of​ ​your​ ​10 ​lives.
 
 ## Goals
 
