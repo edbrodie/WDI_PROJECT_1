@@ -95,6 +95,7 @@ $(() => {
       memzy.checkWin();
       memzy.showAll();
       memzy.checkLose();
+      memzy.restart();
 
     },
 
@@ -172,10 +173,16 @@ $(() => {
       });
     },
 
+    restart: () => {
+      $('.restart').on('click', function() {
+        location.reload(memzy);
+      });
+    },
+
     //create a function that will alert user of a win if they've matched 6 pairs. check array length for win criteria
     checkWin: function() {
       if (memzy.totalMatches.length === 9) {
-        alert('You Won!');
+        alert('You Won! Starting a new game!');
         location.reload(memzy);
       }
     },
@@ -183,7 +190,7 @@ $(() => {
     //make a lose logic, check array for times failed.
     checkLose: function() {
       if (memzy.livesLost.length === 10) {
-        alert('You Lost!');
+        alert('You Lost! Try again!');
         location.reload(memzy);
 
       }

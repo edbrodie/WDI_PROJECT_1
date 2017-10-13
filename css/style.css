@@ -187,12 +187,13 @@ progress::-moz-progress-bar {
   /* style rules */
   background-color: rgba(153, 235, 255, 1);
 }
+
 h3 {
   text-align: center;
   line-height: 30px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
   color: rgba(153, 235, 255, 1);
 }
 
@@ -219,7 +220,7 @@ aside {
 .container {
   width: 900px;
   margin: 20px auto;
-  padding-left: 20px;
+  padding-left: 40px;
   float: right;
 
 }
@@ -247,7 +248,7 @@ aside {
 }
 
 .gameContainer {
-  width: 1280px;
+  width: 1240px;
   margin: 0 auto;
   height: 520px;
   background-color: rgba(0,0,0,0.5);
@@ -269,15 +270,22 @@ aside {
   z-index:-1;
 }
 
+.restart {
+  height: 20px;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 0 14px 0 0;
+}
+
 
 #progressBar {
-  margin: 10px 50px 0 10px;
-  padding:0;
-  width:93.25%;
-  float: right;
-  height:5px;
-  overflow:hidden;
-  /*color: rgba(97, 175, 194, 1);*/
+    margin: 30px 30px 0 10px;
+    padding: 0;
+    width: 95.5%;
+    float: right;
+    height: 5px;
+    overflow: hidden;
+    /* color: rgba(97, 175, 194, 1); */
+    border-radius: 0px;
 
-  border-radius:0px;
 }
