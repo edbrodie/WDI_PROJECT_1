@@ -12,7 +12,6 @@
 </head>
 <body>
 
-</body>
 </html>
 
 <html>
@@ -29,6 +28,8 @@
 
   <div class="gameContainer">
     <div class="container">
+
+
 
       <div class="symbol" id="symbol1" ></div>
       <div class="symbol" id="symbol2" ></div>
@@ -48,16 +49,26 @@
       <div class="symbol" id="symbol16" ></div>
       <div class="symbol" id="symbol17" ></div>
       <div class="symbol" id="symbol18" ></div>
+      <progress value="0" max="700" id="progressBar"></progress>
+
 
     </div>
 
     <aside>
-      <h2>  <button class='clicky'>show</button></h2>
-    <h2><button class='starttime'>start</button></h2>
-      <progress value="0" max="20" id="progressBar"></progress>
+      <h3>
+        <strong>Memzy is a game that will test your memory...</strong></br></br>
+      </h3>
+      <h4>
+        Clicking 'Begin Game!' will give you a short ammount of time to see the symbols, signalled with the timer, beneath.</br></br>
+        When the timer is up you have 60 seconds and 10 lives to complete the game!</br></br>
+        Good luck!</br>
+      </h4>
+      <h2>  <button class='clicky'>Begin Game!</button></h2>
+    <!-- <h2><button class='starttime'>start</button></h2> -->
+
       <p class='statsLeft'>Matches: <span class='matches'>0</span></p>
-      <p class='statsLeft'>Lives left: <span class='lives'>5</span></p>
-      <p class='statsLeft'>Time left:<span id='timer'>30</span></p>
+      <p class='statsLeft'>Lives left: <span class='lives'>10</span></p>
+      <p class='statsLeft'>Time left:<span id='timer'>60</span></p>
       <span> Restart </span>
       </aside>
   </div>
