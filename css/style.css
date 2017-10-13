@@ -108,21 +108,7 @@ wbr {         outline: 1px solid #DB175B!important; }*/
 
 }
 
-.statsLeft {
-  margin: 10px;
-  font-size: 22px;
-  border-bottom: 1px rgba(97, 175, 194, 1) solid;
-  padding-bottom: 3px;
-}
 
-#bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index:-1;
-}
 
 body {
   font-family: 'Open Sans Condensed', sans-serif;
@@ -146,6 +132,8 @@ h1 {
   color: rgba(153, 235, 255, 1);
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-family: 'Open Sans Condensed', sans-serif;
+
+
 }
 
 
@@ -169,61 +157,17 @@ button {
 }
 
 
-
 button:active {
   top: 1px;
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.container {
-  width: 900px;
-  margin: 20px auto;
-  padding-left: 20px;
-  float: right;
 
-
-
-}
-
-.symbol {
-  float: left;
-  margin: 10px;
-  height: 120px;
-  width: 120px;
-  color: rgba(153, 235, 255, 1);
-  text-align: center;
-
-  background-color: rgba(255,255,255,0.2);
-}
-
-.symbol:hover {
-  cursor: pointer;
-  border: 3px solid rgba(153, 235, 255, 1);
-}
-
-.symbol p {
-  margin:38px;
-  font-size: 40px;
-  color: rgba(153, 235, 255, 1);
-}
-
-.gameContainer {
-  width: 1280px;
-  margin: 0 auto;
-  height: 520px;
-  background-color: rgba(0,0,0,0.5);
-
-}
 div {
   letter-spacing: normal;
   color: rgba(153, 235, 255, 1);
 }
-
-/*#progressBar {
-display: inline-block;
-
-}*/
 
 progress {
   /* style rules */
@@ -261,9 +205,71 @@ h4 {
   font-weight: bold;
   font-size: 14px;
   color: rgba(153, 235, 255, 1);
+}
 
+aside {
+  padding: 50px 10px;
+  color: rgba(153, 235, 255, 1);
+
+  width: 350px;
+  height: 500px;
+  /*word-spacing: 30px;*/
 
 }
+.container {
+  width: 900px;
+  margin: 20px auto;
+  padding-left: 20px;
+  float: right;
+
+}
+
+.symbol {
+  float: left;
+  margin: 10px;
+  height: 120px;
+  width: 120px;
+  color: rgba(153, 235, 255, 1);
+  text-align: center;
+
+  background-color: rgba(255,255,255,0.2);
+}
+
+.symbol:hover {
+  cursor: pointer;
+  border: 3px solid rgba(153, 235, 255, 1);
+}
+
+.symbol p {
+  margin:38px;
+  font-size: 40px;
+  color: rgba(153, 235, 255, 1);
+}
+
+.gameContainer {
+  width: 1280px;
+  margin: 0 auto;
+  height: 520px;
+  background-color: rgba(0,0,0,0.5);
+
+}
+.statsLeft {
+  margin: 10px;
+  font-size: 22px;
+  border-bottom: 1px rgba(97, 175, 194, 1) solid;
+  padding-bottom: 3px;
+}
+
+#bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index:-1;
+}
+
+
 #progressBar {
   margin: 10px 50px 0 10px;
   padding:0;
@@ -274,16 +280,4 @@ h4 {
   /*color: rgba(97, 175, 194, 1);*/
 
   border-radius:0px;
-}
-
-
-
-aside {
-  padding: 50px 10px;
-  color: rgba(153, 235, 255, 1);
-
-  width: 350px;
-  height: 500px;
-  /*word-spacing: 30px;*/
-
 }
